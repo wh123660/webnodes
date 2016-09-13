@@ -1,0 +1,515 @@
+1、web前端基础的技术：html/css/js/ajax + HTML5
+2、框架技术--》不同的目的，针对于不同的原生代码进行封装
+3、jQuery(DOM操作的封装)、chart.js/two.js
+4、框架整合：页面上使用多种框架技术
+	a、使用框架：引入js/css文件
+	b、根据需求灵活选择不同的框架中的 API
+5、学习方式：
+	a、学会查手册
+	b、分析代码，模仿代码
+	c、记忆：核心点
+
+Bootstrap：对 CSS 和 JS 进行了封装，提供了css样式类，常见动效，自适应（响应式）布局
+	面试题：谈谈自适应（响应式）布局的理解（1、作用  2、如何实现  3、适用性）
+		前端性能优化：减少服务器的交互（背景图、1个css使用@media）
+
+一、概述
+	1、bootstrap的作用：
+	2、包含哪些内容
+		全局样式类、栅格布局、常用组件、插件、定制
+	3、开发工具：webstorm
+
+二、手工实现响应式布局
+	1、百分比 + 浮动
+	2、CSS媒体查询技术：在CSS代码中，media技术--》根据屏幕的大小，自动选择执行哪些 CSS 代码
+		@media screen and (min-width:990px){
+			div.box {}
+		}
+		@media screen and (max-width:989px) and (min-w){
+			div.box {}
+		}
+
+	3、如何实现
+		a、使用 webstorm 开发：以项目作为文件的组织方式
+		b、添加特有的代码
+
+	4、如何测试
+		a、浏览器调试：模拟不同尺寸的屏幕
+		b、ADT
+		c、真机测试
+
+	5、定义页面的视口
+		a、声明页面适应不同的客户端设备
+			----页面宽度的自适应
+
+	6、定义响应式的 CSS 代码
+		a、尺寸使用 百分比
+		b、img：使用 max-width
+		c、使用 :after 实现浮动的清除
+		d、字体：使用 em  <div>aa<p>bb</p></div>
+		e、使用媒体查询技术
+
+	7、media属性:link标记里添加 media 属性，实现选择性的执行某个 CSS 文件
+		<link media="screen/print"/>--打印或者屏幕
+		<link media="screen and (max-width:) and (min-width:)"
+	--->把所有的 CSS 文件下载，选择性的使用
+		三个 css 文件做成 1 个 css，在css 文件里，选择执行某些代码
+
+	8、@media--CSS 媒体查询技术：使用 1 个CSS 文件即可，可以在文件中，添加媒体的查询
+		@media screen and (max-width:;) or (min-width:;) and (orientation:;) {
+		}
+
+		@media () {
+	
+		}
+---分开屏幕的尺寸
+	超大屏：>1200px
+	PC屏：992px  ---1199
+	PAD屏幕：768 --- 991
+	PHONE：767
+
+	9、实践案例：布局、细节--》手工代码实现
+		a、代码的细节:CSS RESET
+		b、什么情况下适合使用响应式
+			不适应特别复杂的网站，电商
+			适应 门户网站、个人站点
+
+三、Bootstrap 框架：起步（介绍）、全局样式类、组件、插件、定制
+	1、框架文件：css和js文件
+                     帮助手册
+
+	2、建立一个使用 boot 的html 文件
+		<head>
+			<meta name="viewport"
+			<link css
+			<!-- if lt ie 9
+			<script js
+
+	3、可以使用提供的各种样式：按钮
+
+	4、bootstrap.css文件
+		a、CSS reset：基本元素的样式定义
+		b、盒子模型的计算方式
+			box-sizing:content-box;--->width/height：内容区域（padding会撑开元素的框）--》保证内容的显示，缺点是计算总尺寸麻烦
+			box-sizing:border-box;---》width/height：框的尺寸（padding计算在框之内的）优先保证布局和尺寸---》适用于响应式布局
+		c、百分比+浮动
+		d、@media
+
+
+四、全局 CSS 样式
+	1、使用 boot 提供的全局样式的时候：使用 F12 查看源代码
+	2、容器：包含其他元素的div/header/section等
+		container：固定宽度的---》针对于不同尺寸的屏幕，拥有不同的width
+		container-fluit（液体，流动）：100%，适用于移动设备
+	3、按钮的样式
+		btn：添加按钮的基本的样式：尺寸、边框
+		其他样式类：颜色、状态
+			btn-default/danger/warning/info/primary/success
+		---》CSS 中多类 <p class="s1 s2 d3"
+		active：根据当前元素的样式，进行重点提示的效果
+		btn-block：常用于移动设备，实现大个
+		尺寸：btn-default/btn-lg/btn-sm/btn-xs
+		disabled：禁用的状态
+	4、图片的样式
+		响应式：img-thumbnail(边框，常用于缩略图)
+			img-responsive（没有其他样式）
+			---》max-width:;
+		非响应
+			img-circle
+			img-rounded
+	5、文本的样式
+		文本颜色：tex-dange/success/....
+		文本对齐：text-center/
+		文本大小写：text-lowercase/..
+		bg-danger/success/..---》可以为所有元素使用
+		lead ---类似于 active--实现着重突出显示的效果
+
+		关于颜色：有一个比较饱和的主色调--作为网站的基色
+			lighter(80%)  60%  30%
+			darker()
+
+	6、其他小样式
+每日一练：完成响应式布局的页面（手写）
+	  进一步熟练使用工具
+
+	7、列表
+		ul ol dl/dt/dd---适用于大框中包含多个并列的小框
+		a、结构
+		b、 list-inline/unstyled
+		c、快捷键  ul>li
+
+	8、表格
+		a、结构
+		b、基础的样式 table--》横向边框、宽度
+		c、其他样式
+			table-striped---》隔行变色
+			table-hover---》鼠标悬停变色
+			table-bordered---》竖向边框
+		d、响应式表格：当表格的尺寸超过最小屏幕的尺寸时，表格区域出现滚动条，页面不受影响
+			<div class="table-responsive">
+				<table>
+
+	9、栅格系统：实现整个页面的响应式布局--》页面的组成部分，根据屏幕尺寸的不同，占不同的比例
+		a、将屏幕横向划分为 12 等分
+		b、定义各个块占：某种屏幕下，占几个等分
+		c、将页面从上向下分为几个大的组成块--row
+			row行中：从左向右分为组成块（col列）
+		d、列：如何占比-->*是数字（1-12），表示占比
+				col-lg-*   1200px---超大屏幕PC
+				col-md-*   992------PC
+				col-sm-*   768 -- 991--PAD
+				col-xs-*   767--PHONE
+---》底层代码添加的 width:？%  float:left;
+
+		e、关于列的宽度：
+			col-sm-8：在小屏、中、大都会占8格
+				   在xs情况下，会失效
+
+		f、自适应：大小尺寸下，都能显示
+		<div class="col-md-6 col-sm-8 col-xs-10">
+
+		g、设置隐藏：hidden-lg/md/sm/xs
+
+		h、列的偏移：设置列向右移动 col-md-offset-*
+
+		i、列的嵌套：往往用来实现复杂的布局效果
+<div class="row">
+	<div></div>
+	<div class="col-md-8 col-sm-12">
+		<div class="row">
+			<div class="col-md-3 col-sm-6 col-xs-12"></div>
+		</div>
+	</div>
+</div>
+			
+			
+<div class="row">
+	<header class="col-lg-12"></header>
+</div>
+<div class="row">
+	<aside class="col-lg-3"></aside>
+	<div class="col-lg-7"></div>	
+	<aside class="col-lg-2"></aside>
+</div>
+<div class="row">
+	<footer class="col-lg-12"></footer>
+</div>
+
+	10、表单
+		a、基础表单
+			文本和控件，都分别独占一行---》适用于小屏
+			<form>
+				<div class="form-group">
+					<label>
+					<input>
+				</div>
+
+		b、内联表单：文本和控件都在同一行，可能和其他控件也位于同一行----》页面结构非常紧凑的情况下
+
+		c、水平表单：一行里，分为三个组成部分（文本、控件、提示信息）
+		将表单结合栅格系统的方式来实现
+			<form class="">
+    			   <div class="form-group"--》类似于row
+				<div class="col-xs-5 col-xs-offset-*"
+					<label/input/span
+
+		d、组成元素的基础样式	
+			control-label  --》标签文本
+			form-control  --》控件
+			help-block    --》提示文本
+
+	11、辅助样式
+		a、关于浮动		
+<div>
+	<p style="float:left;"></p>
+	<p style="float:left"></p>
+</div>
+<h1></h1>		:after {..}
+使用boot提供的样式类
+<div class="clearfix">
+	<p class="pull-left"></p>
+	<p class="pull-left"></p>
+</div>  
+<h1></h1>
+		b、隐藏
+			.hidden     ---》display:none;
+			.invisible  ---》visibility:;
+			区别：display为none，从文档中彻底删除
+				visible：不可见
+ <span>11</span>
+ <span class="hidden">22</span>
+ <span>33</span>
+ <span class="invisible">44</span>
+ <span>55</span>
+
+
+五、组件:boot 提供的各种成型的组成部分，比如下拉菜单，导航条，页签。直接构建我们的页面
+	0、使用 CSS、JS、Fonts
+
+	1、图标字体：glyphicon基本效果  glyphicon-**
+		--->font的文件
+http://localhost:63342/P01/01_nav.html	 apach
+
+	2、下拉菜单：折叠式的下拉效果
+		<select><option>   -html标记
+		<button></button>  ---原生代码
+		<ul></ul>
+
+		boot提供的组件：
+			<div class="dropdown/dropup">---外层的包含框
+				<a/button data-toggle="dropdown"  ---点击
+				<ul class="dropdown-menu">---弹出的菜单项
+					<li></li>
+				</ul>
+			</div>
+		---》实现组件的动效，引入 jquery 和 boot.js		
+
+	3、按钮组
+		<div class="btn-group">
+			<button>/<a>
+			
+		</div>
+
+	4、警告框
+		<div class="alert alert-info/danger">
+			<span data-dismiss="alert">文本或者图标
+			其他文本图标。。。
+
+
+----》boot所提供的组件中，提供了一个非常重要的属性 data-***(自定义的扩展属性)--js插件的定义（js代码）
+		data-toggle：切换，切换显示的地方---》根据属性的取值的不同，实现切换不同的元素
+		data-dismiss
+
+	5、导航：将多个元素组成一组，作为标签页类型的导航
+		<ul class="nav nav-tabs"
+			<li><a data-toggle="tab"
+
+
+	6、导航条：把多种元素放在一起，作为导航--》导航条---》经常做成响应式的导航条
+		a、划分结构
+			logo：固定在左侧
+			左侧菜单
+			右侧菜单
+			折叠指示框：当放不下的时候，切换显示隐藏起来的菜单项
+
+		b、html代码的结构
+<div class="navbar navbar-default" --贯穿整个页面 
+	<div class="container"	--上下的边距一致
+		<div class="navbar-header">
+			<a class="navbar-brand"><img /></a>
+			<a/button class="navbar-toggle"
+				data-target="#n1"
+				data-toggle="collapse"
+>
+				<span class="icon-bar"></span>
+			</a>
+		</div>
+		<div class="collapse navbar-collapse" id="n1">
+			<ul class="nav navbar-nav">
+				<li>
+			</ul>
+			<ul>
+				<li>
+			</ul>
+		</div>
+
+		c、样式：navbar  collapse 
+
+		d、动态效果  通过id进行绑定
+
+	7、面板：两层结构  样式关键字 panel
+
+	8、媒体对象：两层结构，图和文字，水平方向如何排列 样式关键字 media
+
+	9、路径导航 
+
+	10、列表组：竖向的列表效果 list
+
+	11、输入框组
+
+	12、其他
+
+DOM-->jquery-->其他js框架的封装
+	boot:CSS和js的封装---长处在于样式和动效，实现页面的组成
+	ng：js的进一步的封装----DOM操作（绑定和显示）
+
+js
+	var arr = [11,222,333,4444];
+	ajax从服务器端获取来的
+	
+六、插件	
+	1、boot的插件：基于jQuery和boot.js（一次性的引入了所有的js插件所需要的功能）
+		单个引入js文件
+
+	2、如何实现的插件功能
+		方式一：使用扩展属性 data-*--》优先建议使用
+		<div class="dropdown">
+			<a data-toggle="dropdown"></a>
+			<ul>
+				<li>
+
+		方式二：js 代码的方式  --》个别情况
+			$('#b1').click(function(){
+				$(this).dropdown();	
+			});
+
+
+	3、哪些插件：下拉框、导航、警告框
+		dropdown/alert---》API
+		
+	4、页签式导航
+		a、API  $().tab('show');
+		b、完整式的:带内容
+			<ul
+				<li class="active"
+					<a href="#a1">
+					<button data-target="#a1"
+
+			<div class="tab-content">
+				<div id="a1" class="tab-pane active">
+				<div class="tab-pane">
+
+		c、过渡效果(和过渡效果相关的class）
+			fade
+			in---常用于元素的默认显示
+
+	5、折叠
+		a、基础折叠效果
+			<a/button href/data-target="#d1"
+			<div class="collapse" id="d1"		
+
+		b、复杂折叠：实现面板的折叠效果
+			<div class="panel">
+				<div class="panel-heading">
+					<a href="#">
+
+				<div id="" class="collapse panel-collapse">
+					<div class="panel-body"
+
+
+		c、多组面板，实现互斥的折叠效果
+			<div class="panel-group" id="p1">
+				<div>
+					//...
+					<a data-parent="#p1"></a>
+				</div>
+
+	6、tooltip--工具提示---》实现动效，必须 data-* 和 js 一起使用--》鼠标移入显示，显示title属性的值
+		<元素 title="" data-toggle="tooltip" data-placement="top/left/right/bottom"
+
+		$('[data-toggle="tooltip"]').tooltip();
+
+	7、popover弹出框--》点击出现，点击消失--》出现的信息自定义的
+		<元素 data-toggle="popover" data-content="点完出现的信息" data-container="body" data-placement=""
+
+		$('[data-toggle="popover"]').popover();
+
+
+	8、模态框（modal）：阻塞当前操作---》常用于关键节点
+		a、alert/confirm/prompt
+		b、原生代码：遮罩层+对话框+元素
+		c、boot中的实现方式
+			<a/button 点谁
+			模态框:4层
+<div ----外层
+	<div ----对话框
+		<div   ---用于包含具体的内容
+			<div  --header
+			<div  --body
+			<div  --footer
+
+		d、如果关闭
+			data-dismiss = "modal"
+			js的方式
+				$('#m1').modal('show/hide');
+----》使用boot框架技术，导致页面的html代码结构复杂，借助bootlint检查，动态加载
+		s.onload = funtion(){bootlint.show...}
+
+
+	9、图片轮播
+		a、完整结构：
+			<div --外层
+				<div  ---主体
+				<div   ----左右切换
+				<div  ---序号
+
+
+六、定制（LESS）
+	0、静态样式表：CSS技术---没有编程语言的灵活，比如变量等
+		可以直接写 CSS 代码改写boot提供的样式---不方便维护
+	1、动态样式表技术（SASS/LESS/...）
+	2、LESS：编写.less文件---必须经过编译，变成CSS代码，由html文件使用
+	3、LESS语法：支持所有的 CSS 语法，基础上，可以加入一些灵活的策略（变量、嵌套、参数）
+		@mainColor:#add;
+
+		button{border:1px solid @mainColor;}
+		p{color:@mainColor}
+		ul{
+			color:;
+			.p{
+				color:;
+			}
+		}
+	4、如何使用 LESS（如何把LESS文件编译为 css文件）
+		a、客户端编译
+			页面直接引用 less 文件，同时引入 less.js文件---》由 less.js 文件负责将less文件变成css文件
+			--》服务器取回，less文件不会变成可以维护的css文件
+
+		b、手动编译：less---》css文件
+			必须安装编译环境：node.js--V8-->js的运行环境
+			包含一个组件： lessc--less的编译器
+			
+	node的环境下:包含很多模块
+	node d:/npm/node_moduel/../bin/lessc e:/1.less > e:/1.css
+
+		c、工具进行：可以lessc配置成 webstrom 的filewatcher（文件监视器）---》自动调用lessc.cmd，生成css文件
+
+	5、LESS的语法
+		a、支持变量 @name:value;
+		b、混合--》把多个样式混合在一起
+			.s1 {color:red;}  --》重用
+			.s2 {.s1;font-size:;}
+		c、带参数的混合
+			.s1(@a,@b:4px) {}
+			.s2{
+				.s1(#0f0,6px);
+			}
+		d、嵌套--》根据页面结构定义层次化的层次化的样式代码
+			.s1{
+				.s2{
+				}
+				>p{}
+				a{
+					&:hover {}
+				}
+			}
+		e、运算符和函数---》帮助手册（代码示例部分）
+			运算  @w/12
+			函数 floor()  darken/lighten()
+
+	
+		f、@import "1.less";---在一个文件中引入其他文件的代码---》分成各个小文件，根据需要选择，减少文件的大小
+情形一：index.css文件---@import "a.css";@import "b.css";
+	页面使用 index.css文件--》多次文件的下载---影响性能
+
+情形二：
+	index.less文件--@import "a.less"; @import "b.css";
+	---先被编译为 index.css文件（成型）
+	页面使用 index.css
+
+
+	6、Boot的样式源代码
+	7、定制
+		a、瘦身
+		b、修改
+		c、增加或者删除
+
+
+
+
+
+
+
+
+
+

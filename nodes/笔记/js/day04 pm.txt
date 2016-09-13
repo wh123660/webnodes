@@ -1,0 +1,91 @@
+正课:
+1. ***DOM:
+   DOM树
+   查找元素
+   修改元素
+
+1. ***DOM: Document Object Model
+           文档     对象   模型
+   什么是: 专门操作网页内容的API
+   功能: 增，删，改，查   
+
+   鄙视题: HTML XHTML DHTML
+       HTML: 专门编写网页内容的语言
+       XHTML: 更严格的HTML标准
+       DHTML: 一切实现网页动态效果的技术的统称
+         DHTML=HTML+CSS+JS
+
+   DOM树: 一个网页被加载进内存时
+          都会先创建一个对象document，指代正在打开的网页内容
+          网页中的一切内容都是document的子节点（Node）
+          以document为根，所有网页中的内容组成的树形结构就是DOM树。
+
+   查找元素: 
+     1. 按照节点关系查找: 
+       节点树: 包含所有内容的节点
+       父子关系: parentNode  childNodes  firstChild lastChild
+       兄弟关系: previousSibling  nextSibling
+       强调: 看不见的空字符(空格，回车，制表符)
+             除了parentNode外，都会受到空字符的干扰!
+       
+       元素树: 仅包含元素节点
+	问题: 不包含任何文本节点
+       父子关系: 
+parentElementNode children firstElementChild lastElementChild
+       兄弟关系: previousElementSibling  nextElementSibling
+
+     2. 用API查找：通过HTML属性: 
+       1. 按id查找元素:
+         var elem=document.getElementById("id");
+         返回值: 返回一个节点对象
+         其实，id本身就是一个全局变量
+       2. 按标签名查找: 
+         var elems=elem.getElementsByTagName("标签名");
+          意为: 在elem元素下，查找所有指定的“标签”
+         返回值: 返回多个节点对象，组成的一个集合(像数组一样)
+ 	强调:getElementsByTagName不但可找到直接子节点，还会找到所有间接子节点。
+       3. 按name属性查找: 
+         var elems=elem.getElementsByName("name");
+	  意为: 在elem元素下，查找所有name属性为指定值得元素
+         返回值: 返回多个节点对象，组成的一个集合(像数组一样)
+       4. 按class属性查找: 
+         var elems=elem.getElementsByClassName("class")
+	  意为: 在elem元素下，查找所有class属性为"class"的元素
+
+    3. 按选择器查找:
+	1. 找一个元素: 
+           var elem=elem.querySelector("选择器");
+	2. 找多个元素: 
+           var elems=elem.querySelectorAll("选择器");
+
+    修改：
+      1. 修改元素内容: 
+	elem.innerHTML: 表示开始标签到结束标签之间的html内容
+
+      课堂练习: 
+	事件:用户出发的浏览器元素状态的改变        
+        单击事件: onclick
+        何时定义事件: 只要希望单击元素时，指定的任务都要定义在onclick中
+	如何定义: 2步
+            1. 定义一个函数: 用于在事件发生时执行任务
+            2. 在元素的onclick属性上调用任务函数
+	强调: 事件最大的特点是只有事件触发，才执行任务
+
+        this关键字，在事件发生时，自动获得当前触发事件的元素
+	何时使用: 如果事件的函数内用到了当前元素
+
+      2. 获取或修改标准属性: 
+	elem.标准属性
+        比如: elem.id
+        修改样式: elem.style.css属性
+      
+
+
+
+
+
+
+
+
+
+

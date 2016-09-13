@@ -1,0 +1,153 @@
+window.open("url","name/target"，"config") 
+config:top=?,left=?height=?,width=?
+name/target:_self,_blank
+		   新窗口打开
+location.replace("url")  替换当前地址
+   地址     替换
+window.outerHeight/outerWidth 完整窗口大小
+window.innerHeight/innerWidth 文档显示区大小
+window.resizeTo(宽，高)
+window.resizeBy(宽的增量，高的增量)
+screenTop=screenY
+screenLeft=screenX
+window.screen...
+window.moveTo(x,y)将窗口移动到xy的位置
+window.moveBy(x的增量，y的增量)
+screen.width/height
+screen.availWidth/availHeight 屏幕可用文档大小
+onmouseover 鼠标移入时
+e.screenX/screenY 获得鼠标的坐标
+定时器
+timer=setInterval(task,interval) 创建定时器
+		执行任务 间隔时间
+clearInterval(timer) 停止定时器timer
+new Date(yyyy/mm/dd hh:mm:ss)	创建一个时间
+now=new Date()		获得现在的市价
+y=now.getFullYear()	获得now的年份
+month=now.getMonte	获得now的月份
+date=now.getDate	获得now的日
+days=now.getDays	获得now的星期
+h=now.getHours();      获得now的小时数
+m=now.getMinutes();	获得now的分钟数
+s=now.getSeconds();	获得now的秒数
+sDeg=s*360/60;
+mDeg=(m*60+s)*360/3600;
+hDeg=(h*3600+m*60+s)*360/43200;
+timer=setTimeout(task,wait) 一次性定时器
+		       等待的毫秒数
+clearTimeout(timer)   停止一次性定时器
+window.close()   关闭页面
+var subArr=arr.slice(starti,endi+1);含头不含尾   截取  负数是倒数下标
+var newArr=arr1.concat(值1,值2,arr2,值3,...)  将值1,2,3，arr2数组拼接到arr1数组后组成一个新数组
+var newArr=arr1.concat(arr2);   将arr2拼接到arr1之后生成新数组
+arr.splice(starti,n)    删除arr中starti位置后的n个元素
+   返回的是一个临时数组
+str.split(reg) 		返回数组，不包含正则字符，返回的数组是字符串组成
+arr.splice(starti,0,值1,arr2,....)  在arr的starti位置之后插入元素  数组不会被打散
+arr.sort();  冒泡排序   默认按字符串排列
+arr.sort(function(a,b){return a-b;}); 按数字大小排序
+arr.push()    从lenngth处压入一个数
+arr.pop()	从length处弹出一个数
+arr.unshift()	从[0]位置压入一个数
+arr.shift()	从[0]位置弹出一个数
+str.trim()      去掉字符串开头结尾的空格
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

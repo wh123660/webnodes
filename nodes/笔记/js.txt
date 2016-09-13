@@ -1,0 +1,291 @@
+"use strict"  严格模式
+undefined	没找到
+null		无
+infinity	无穷
+
+alert("输出内容")  弹出警告框
+document.write("输出内容")   页面显示内容
+console.log("输出内容")    控制台输出内容
+if(条件){操作}		如果满足条件就执行操作
+if(){}else{}		如果否则
+if(){}else if(){}else{}   如果否则如果否则
+while(条件){循环体；循环变量；}	循环变量无规律	如果符合条件进入循环
+break          中断操作
+Math.random()	随机数
+for(条件){循环体；循环变量；}	循环变化有规律	如果符合条件进入循环
+for(;;){操作}		死循环
+while(true){操作}	死循环
+continue
+循环的时候写到条件里，跳过本次，继续下一个循环
+do{循环体；循环变量}while(条件)   不满足条件也执行一次的循环
+function 函数名(参数){函数体；return 返回值}	创建一个函数
+document.getElementById("id名")	在document里找id为ID名的元素
+document.getElementByTagName("标签名")	在document里找标签为标签名的元素
+document.getElementByName("name名")	在document里找name为name名的元素
+document.getElementByClassName("class名")在document里找class为class名的元素
+elem.querySelector("选择器")  在elem里通过选择器找一个元素
+elem.querySelectorAll("选择器")在elem里通过选择器找所有元素
+elem.innerHTML			elem的内容
+elem.style.css属性		elem的css样式属性
+var 变量名=值，变量名=值....	同时赋值多个变量
+num.toFixed(d)		将数字num四舍五入取小数d位
+typeof(变量名)		返回变量的值的数据类型
+Number(x)		将x转为数字
+parseInt(str)		将字符串转为数字，跳过开头空字符取小数点以前的数字碰到非数字字符停止
+parseFloat(str)		将字符串转为数字，跳过开头空字符取数字(包括小数)碰到非数字字符停止
+var input=prompt("提示信息")	将用户输入的信息保存在input里
+var url=encodeURI("url")	将url转为单字节字符  可以把汉字转为单字节字符
+decodeURI(url)		将编码后的url解码回原文
+如果出现保留字符  ：或/
+var url=encodeURIComponent("url")	编码
+decodeURIComponent(url)		解码
+if(条件){操作1}else{操作2}==条件？操作1：操作2
+n<<m  ===  n*2的m次方
+n>>m  ===  n/2的m次方
+n>>>0   n^0   n|0    n取整
+  索引数组
+var arr=[]    创建空数组arr
+var arr=new Array();   创建空数组arr
+var arr=[值1，值2，..]  创建数组arr同事赋值
+var arr=new Array(值1，值2...)  同上
+arr[arr.length-1]   arr数组的最后一个元素
+arr[arr.length]=值   给arr尾部添加新元素
+for(var i=0;i<arr.length;i++){arr[i]} 遍历arr的每一个元素
+  关联数组
+arr["下标名"]=值   给关联数组的下标名处赋值
+for(var key in arr){arr[key]}  遍历关联数组的每个元素
+String(arr)    输出数组的每个元素的值，用逗号分隔
+arr.join("分隔符")  输出数组的每个元素的值，用分隔符分隔
+arr.join()     输出arr，用逗号分隔
+arr.join("")   输出arr，无缝拼接
+join的输出是字符串格式
+var newArr=arr1.concat(arr2)  输出arr1和arr2拼接的新数组
+var newArr=arr1.concat(值1，值2，arr2)  输出arr1和值1值2和arr2拼接的新数组
+concat是把数组打散拼接到新数组里的
+arr.slice(starti,endi+1)   截取arr中starti位置到endi位置的数，
+返回新的数组   含头不含尾  支持负数 要想截取到结尾可省略第二参数
+arr.splice(i,n，值1，arr2)  删除或替换arr中i位置开始的n个元素 
+ 返回值是组成的新数组  n为0等于插入  传入的arr不被打散
+arr.reverse();   颠倒数组
+arr.sort()    冒泡排序   按字符串排序
+arr.sort(/*比较器函数*//*function(){}*/)   自定义排序
+function(a,b){return a-b;}  传入sort里就是升序排序
+function(a,b){return -(a-b)} 传入sort里就是降序排序
+arr.push(值1，值2...)  从arr.length压入值1，值2...
+arr.pop()	从arr.length-1的处弹出一个
+arr.unshift(值1，值2..)  从arr的[0]位置压入
+arr.shift() 	从arr[0]位置弹出一个
+var data=[];	创建空数组
+data[r]=[.....]	空数组里添加新数组  形成一个二维数组
+data[r][c]  访问二维数组的r位置第c个元素
+遍历一个二维数组
+for(var r=0;r<arr.length;r++){
+ for(var c=0;c<arr[r].length;c++){
+  arr[r][c];   c越界返回undefined，r越界报错
+ }
+}
+str[i]  访问字符串的下标为i的字符
+str.toUpperCase();  转换成大写字母
+str.toLowerCase();  转成小写字母
+str.charAt[i] === str[i]   获得字符串下标为i的字符
+str.charCodeAt(i)  将str下标为i的字符转成unicode号
+Striing.fromCharCodd(unicode)   将一个字符的unicode号转为原字符
+正则表达式
+\d	匹配所有数字
+\D	匹配所有非数字
+\w	匹配说有字母加下划线
+\W	匹配所有非字母和下划线
+\s	匹配所有空字符
+\S	匹配所有非空字符
+n?	匹配零次或一次字符n
+n*	匹配零次或多次n
+n+	匹配一次或多次n
+^	匹配开头字母    /^a/
+$	匹配字符串的结尾   /a$/
+\b	匹配边界
+\B	匹配非边界
+?=x	匹配其后紧接x的字符串
+?!x	匹配其后面没有x的字符串
+n{x}	匹配n出现x词
+n{x,y}	匹配字符n出现x到y次
+n{x，}	匹配n出现>=x次
+n|m	匹配字符n或字符m
+()	用（）指定分组----子表达式
+.	匹配所有除了回车和换行的任意单字符
+[abc]	匹配所有的a,b,c
+[^a]	匹配除了a以外的所有字符
+[0-9]	匹配所有数字
+[a-z]	匹配所有小写字母
+[A-Z]	匹配所有大写字母
+[A-z]	匹配A-z的所有字符即A-Z[\]^_`a-z
+\b开头结尾的空字符
+\b([a-zA-Z])[a-zA-Z]+\1\b   获得任意单词
+\b([a-zA-Z])  获得首字母
+[a-zA-Z]+    获得单词中间字母
+\1\b         获得结尾字母
+(?![a-zA-Z]+$)(?![0-9a-z]+$)[0-9a-zA-Z]{8}  至少一个数字一个大写字母组成的八位字符
+(?![a-zA-Z]+$)    至少要有一位数字
+(?![0-9a-z]+$)	  至少要有一位大写字母
+[0-9a-zA-Z]{8}	  八位字母数字组成
+/.*/  /.+/		匹配所有的.   贪婪模式
+/.*？/	/.+?/	？将贪婪模式转为惰性模式
+(.*?)(.+?)	贪婪->懒惰
+str.indexOf("关键词",formi)	关键词在str中的位置，下标
+str.lastIndexOf("关键词"，formi)  关键词在str中从后往前数的位置
+var reg=/正则表达式/后缀     创建一个正则
+分组: () 每个分组在匹配时，自动获得一个序号，从1开始
+           2种用途: 1. 在正则内部\n，匹配和第n个分组相同的内容
+                    2. js中使用$n获得关键词的第n个分组子关键词
+/reg/g  	g所有的
+/reg/i		i忽略大小写
+var i=str.search(reg)    在str中查找关键词 
+ 匹配的第一个关键词的位置保存到i中  没找到返回-1 
+var kwords=str.match(reg)   在str中找到所有关键词 
+返回值以数组方式存在kwords中  没有加g后缀返回也是数组
+/**********/
+compile();
+reg.exec();	检索字符串中制定的值
+reg.text(str)	检查str中有没有关键词返回true或false
+str.slice(starti,endi+1)   获取str的starti到endi位置的字符
+str.substring(starti,endi+1) 获取str的starti到endi位置的字符
+str.substr(starti,n)	获取str的starti位置开始之后的n个字符
+str=str.replace(reg,"新值1")  将reg找到的关键词替换为新值1
+str.split(reg)	切割  删除str中关键词，把其余字符组成字符串
+str=str.replace(reg,function(k,$1,$2...){return $1})
+在str中找到的关键词替换为关键词的reg分组内容   k表示关键词
+RegExp.$n	获得reg的第n个分组的关键词内容
+\d{15}(\d\d[0-9xX])？	  验证身份证
+Math.ceil(num)		将num上取整 只要超过就取下一个整数
+Math.floor(num)		将num下取整 只要超过省略小数部分
+m^0    m|0    m>>>0      将m下取整
+Math.round(num)		四舍五入取整
+toFixed(d)		d只能在1-20之间，返回字符串
+Math.pow(底数，幂)  	底数次幂   乘方
+Math.sqrt(num)		将num开放
+Math.max(值1，值2....)	在给定的多个值中返回最大值
+Math.min(值1，值2...)	在给定的多个值中返回最小值
+Math.max.apply(Math,arr)	返回arr数组中最大元素
+Math.random()		随机数  取0-1之间
+Math.random()*(max-min+1)+min	随机数，取最大值到最小值之间的数
+Math.random()*(max+1)		随机数，取0-任意数之间的数
+var date=new Date("yyyy/MM/dd/ hh:mm:ss")  创建一个自定义时间
+var date=new Date(yyyy,MM-1,dd,hh,mm,ss)   创建自定义时间
+var d1=new Date(date)		复制一个时间对象
+时间单位/分量
+FullYear Month Date Day Hours Minutes Seconds Milliseconds
+   年     月     日 星期  时     分 	秒	毫秒
+date.getxxx()		获取分量/单位的值
+date.setxxx(n)		设置一个分量的值  将结果保存回date中
+日期计算    两日期相减结果为毫秒差
+月中的日: 1~31 不用修正
+       星期: 0~6 不用修正
+       月: 0~11 ***要修正: 计算机中的月份至比现实小1
+       时: 0~23 不用
+       分秒: 0~59 不用
+try{
+  可能出错的正常代码
+}catch(err){
+  错误处理的代码
+}finally{
+ 无论是否出错，始终执行的代码
+}
+throw new Error("错误信息")	 主动报错
+var 函数名=function (参数列表){函数体；return返回值}
+var 函数名=new Function("参数1","参数2",...,"函数体")
+/**********/
+arguments		函数的参数
+
+function(...){...}		匿名函数，一次性使用
+闭包				保护并重用局部变量的机制
+var obj={			面向对象创建格式
+  属性名：属性值，
+  ...：...，
+  方法名：function（）{}，
+  ...：...
+}
+var obj=new Object() 		创建一个空的对象
+obj.属性名=值			给对象的属性赋值
+obj.方法名=function(){}		传入方法
+1.定义构造函数
+function 类型名/构造函数名（属性参数...）{
+	this.属性名=属性参数
+	this.方法名=function(..){...}
+}
+2.调用构造函数创建对象，也称创建类型的一个实例，也称实例化
+var obj=new 构造函数名/类型名（属性值列表...）；
+this.属性名		对象的属性值调用
+this.方法名()		对象的方法调用
+subOBJ.__proto__	通过子对象向上获得
+Object.getPrototypeOf(subObj)	获得subObj对象的父级圆形对象
+Object.setPrototypeOf(a2,值1)	获得a2对象，将值改为值1
+构造函数.prototype.新成员	向原型对象中添加共有成员
+Object.prototype		原型链的顶部
+obj.hasOwnProperty("属性名")	判断obj是否有此属性
+!obj.hasOwnProperty("属性名")&&("属性名" in obj)	
+判断obj的整个原型链上是否有此属性
+父对象.isPrototypeOf(子对象) 	判断子对象是否在父对象的原型链上
+Array.prototype.isPrototypeOf(obj) 判断obj的原型是否包含数组
+obj.constructor==Array	判断obj的原型链是否包含数组
+/**********/
+obj instanceof Array		同上
+Object.prototype.toString.call(obj)	访问obj
+B.prototype=new A()		让B继承A
+Object.prototype.toString.call(obj)=="[object Array]" 判断obj的本身是不是Array
+					      class
+Array.isArray(obj)		检查obj是不是数组，不检查原型链
+原理：Object.prototype.toString.call(obj)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

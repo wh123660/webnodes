@@ -1,0 +1,195 @@
+BOM常用对象   history location  navigator
+		历史    地址栏     领航者
+history.go(1)  前进
+history.go(-1) 后退
+history.go(0)  刷新
+history.go(n)  前进/后退几步 
+protocal       协议
+host	       主机名和端口号
+hostname 	主机名
+port		端口号，如果端口号为"", http默认80
+pathname 	相对路径名
+search		获得？及之后的查询字符串参数列表
+onclick			鼠标单机
+ondblclick		鼠标双击
+onmouseup		鼠标按下
+onmousedown		鼠标松开
+onmouseover		鼠标移入
+onmouseout		鼠标移出
+onkeydown		键盘下
+onkeyup			键盘上
+onkeypress		键盘空格
+onload			加载
+onunload		
+onchange		
+onfocus			焦点
+onblur
+onresize
+onsubmit		提交
+window.onscroll		当页面发生滚动的时候触发
+document.body.scrollTop	页面滚动的距离	
+window.scrollTo(left,top)		滚动到哪里去
+document.documentElement	html
+onreset			
+onerror			报错
+访问对象属性   obj[属性名]
+open("url","_self")
+location.href="url"
+location="url"
+lacation.assign("url")
+location.replace("url")		当前窗口打开禁止后退
+location.reload(force)		刷新
+		默认false	从缓存中获取
+		true		从绕过缓存读取硬盘
+navigator	封装浏览器软件和配置信息
+.cookieEnabled	判断是否启用cookie
+.plugins	封装浏览器所有插件列表
+.userAgent	记录浏览器内核
+
+elem.addEventListener("事件名"，函数对象，捕获)
+			   		  默认false
+IE8 elem.addEventListener("事件处理函数"，函数对象)  
+DOM:e.stopPropagation();	停止冒泡
+IE8:e.cancelBubble=true;		停止冒泡
+DOM:e.target			获得当前元素
+IE8:srcElement			获得当前元素
+var target=e.target||e.srcElement;  获取目标元素
+DOM:e.preventDefault()		取消事件
+IE8:returnValue=false		取消事件
+兼容：e.preventDefault?e.preventDefault():returnValue=false
+e.screenX/screenY		鼠标相对于屏幕的坐标
+e.pageX/pageY  		相对于网页左上角的坐标IE8不支持
+e.clientX/x		相对于文档显示去左上角的坐标
+e.clientY/y		相对于文档显示去左上角的坐标
+e.offsetX/offsetY	相对于当前元素父元素左上角的坐标
+position:fixed			文档显示区定位
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

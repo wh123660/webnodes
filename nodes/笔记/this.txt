@@ -1,0 +1,55 @@
+什么是this: *在调用函数时*，引用正在调用函数的对象的 关键字
+何时使用: 只要对象自己的方法，要使用自己的属性时，就用this
+各种情况: 
+   1. 对象内部的方法,被对象自己调用: 
+      var ename="scott";
+      var obj={
+	ename:"eric",
+        fun:function(){console.log(this.ename);}
+      }
+      obj.fun();//this->obj
+   2. 函数传递给其他变量存储:
+      var fun=obj.fun;
+      fun();//this->window scott
+   ***鄙视时: this和定义在哪儿无关！
+              只和调用时，使用的对象(.前的对象)有关
+              如果没有用任何对象，就直接调用的函数this->window
+   3. 使用call/apply 临时替换this —— 临时的
+	this->call/apply的第一个参数对象
+   4. 使用bind基于一个函数创建一个新函数，同时提前绑定this
+        永久的，不可被替换的！
+   5. 绑定事件处理函数: 
+	function fun(){...}
+     1. html: 绑定:<button onclick="fun()"  this->
+                btn.onclick=new Function("fun()")
+                            function(){//this->btn
+				fun();//this->window
+                            }
+              调用: btn.onclick();//this->btn
+     2. js: 绑定: btn.onclick=fun; //this->btn
+                  btn.addEventListener("click",fun);
+					      fun中的this->btn
+            调用: btn.onclick();//btn.fun();
+     3. 在对象的方法内部绑定事件处理函数: 
+          事件处理函数中要求即使用对象的属性，由使用当前事件绑定的元素对象: 
+	   不能用bind！因为bind会将当前事件绑定的元素对象替换
+           解决: 留住this : var me=this
+
+   6. 定时器回调和匿名函数自调: this默认都指window
+        如果希望使用所属对象的属性: 用bind永久替换this
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

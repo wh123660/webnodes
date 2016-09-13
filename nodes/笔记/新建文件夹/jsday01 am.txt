@@ -1,0 +1,104 @@
+张东
+zhangdong@tedu.cn
+
+正课:
+1. 什么是JavaScript
+2. 如何使用
+3. 如何调试
+
+4. ***变量
+5. ***数据类型
+
+1. 什么是JavaScript
+    前端三大语言:
+    HTML: 专门编写网页内容的语言
+    CSS: 专门设计网页样式的语言
+    JavaScript: 专门编写交互行为的语言
+      什么是交互? 用户在页面执行操作
+                  网页响应用户的操作，处理用户数据
+                  返回处理结果
+
+    JavaScript发展历程: 
+    NetScape 1995 客户端语言 在客户端进行基本数据处理
+               为什么: 节约网络流量，减少用户等待时间
+           Java write once run anywhere
+           起名为: JavaScript 
+           客户端脚本语言，像极了Java，比Java简单
+    1995 JavaScript->ECMA->ECMAScript标准->规定了核心语法
+        ES标准3.1 8天   ES5标准 1天
+    1996 Microsoft IE JScript
+      ECMAScript:JavaScript语言的国际标准 不能直接使用
+      JavaScript:NetScape参照ECMAScript标准实现的JavaScript版本
+         JScript:微软参照ECMAScript标准实现的JavaScript版本
+    2000 W3C DOM标准: 专门操作网页内容的一套程序标准 3天
+             几乎所有浏览器100%支持
+    2003 NetScape -> Mozilla -> Firefox
+
+    总结: JavaScript=ECMAScript(核心语法 9天)
+                     DOM(专门操作网页内容的程序标准 3天)
+                     BOM(专门操作浏览器窗口的程序 2天)
+
+    JavaScript特点: 
+	1. 运行在客户端浏览器
+        2. 解释执行: 变读取变执行，后读取的相同内容会覆盖先读取的。
+	3. 弱类型
+        4. 基于对象
+
+    JavaScript的用途:
+    
+2. 如何使用：
+    1. 如何编写: JavaScript程序就是最简单的文本
+	3种方式：
+            1. 在网页的script标签中
+		什么是script标签: 网页中专门编写JavaScript程序的区域。
+	        script可出现在页面的任何位置。
+		一般2处: 1. head元素中
+                         2. body元素的结尾
+		何时使用: 如果一段程序只被当前页面使用
+
+            2. 在外部js文件中
+	       什么是js文件: 专门保存js程序的文件
+	       何时使用: 如果一段程序，可能被多个页面共用
+		如何使用: 2步:
+		1. 定义.js文件，在其中编写js程序
+                2. 引入.js文件:<script src="路径"></script>
+	    js文件中的程序和script标签中的程序执行方式完全一样
+             3.控制台
+	课堂练习: 
+        输出一句话: 3种:
+           1. alert("输出内容"): 弹出警告框
+           2. document.write("输出内容"): 出现在网页的body内
+              html网页
+	      其实向网页中写入html内容，所有html内容给都可写入
+           3. console.log("输出内容"): 向控制台输出一句话
+              控制台
+	      什么是控制台：专门输出数据并调试程序的窗口
+	      控制台只支持js语法，不支持定制样式
+
+        引号: js中单双引号不分
+
+	配置快速打开浏览器:Ctrl+B
+	1. 开始菜单->GoogleChrome->GoogleChrome->右键属性
+	2. 复制"目标"中的全部内容
+	3. Tools->Preference->点Tools->右侧下拉列表选:other browser(...)->将复制的内容，粘贴到下方文档框中->点apply
+	结果: 在html文件的编辑界面，同时按Ctrl+B,在Chrome打开
+
+    2. 如何运行:
+	在浏览器软件中，包含了两个小软件： 
+            内容排版引擎: 加载html内容，渲染css样式的软件
+            脚本解释引擎: 读取js程序，并执行程序的软件   
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+

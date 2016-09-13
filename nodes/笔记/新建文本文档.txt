@@ -1,0 +1,41 @@
+function(event){
+	even.preventDefault();			阻止当前元素跳转
+}
+
+img{vertical-align:middel;}			图片对齐方式居中 border-top:transparent
+
+javascript
+while(){}
+for(){}
+for(var key in s){}
+
+jQuery
+for(){}
+$.each(data,function(i){})	i：下标
+
+php
+for(){}
+
+var $row=mysqli_fetch_assoc()	查找到的数据
+
+....load()
+$.get()
+$.post()
+$.getJSON()
+$.getScript()
+$.ajax()
+
+slice
+split
+
+debugger;		断点调试 可以看某个元素的属性
+
+闭包
+
+定时器
+setInterval
+
+表格：
+边框合并		border-collapse:collapse;
+
+$index 	在创建的时候把下标存到$index里面

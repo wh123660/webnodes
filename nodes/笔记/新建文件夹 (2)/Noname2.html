@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>数组去重复</title>
+<script>
+var arr=["adf","sdf","asfs","adf","asdf","asdf","adf","asdf","daf"];
+//查询数组中重复的字符
+//1.用遍历
+function unique1(arr){
+	for(var i=0,unique=[];i<arr.length;i++){
+		unique.indexOf(arr[i])==-1&&unique.push(arr[i]);	
+	}
+	return unique;
+}
+console.log(unique1(arr));
+/*******************************************/
+//2. hash
+function unique2(arr){
+	for (var i=0,unique=[];i<arr.length ;i++ )
+	{unique[arr[i]]===undefined&&(unique[arr[i]]=1);
+	}
+	arr=[];
+	for (var key in unique){
+		arr.push(key);
+	}
+	return arr;
+}
+console.log(unique2(arr));
+
+/*********************************************/
+//3. 不用循环的方式
+function unique3(arr){
+	var reg=/(^|,,)([^,]+)(,,\2)*/g;
+	return arr.sort().join(",,").replace(reg,"$1$2"),split(",,");
+}
+console.log(unique3(arr));
+
+/*********************************/
+for (var i=0,nums=[];i<10;i++ )
+{nums.push(parseInt(Math.random()*999+1001));
+}
+console.log(nums);
+var before=new Date();
+unique1(nums);
+var after=new Date();
+console.log(after-before);
+before=new Date();
+unique2(nums);
+after=new Date();
+console.log(after-before);
+</script>
+</head>
+<body>
+
+</body>
+</html>

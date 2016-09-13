@@ -1,0 +1,8 @@
+window.onscroll		当页面发生滚动的时候触发
+document.body.scrollTop	当前页面滚动的距离	
+window.scrollTo(left,top)		滚动到哪里去
+window.scrollBy(left的增量,top的增量)	滚动的增量
+document.documentElement	html
+elem.offsetTop			距离相对低昂为的父元素顶部的距离
+elem.offsetParent		相对于定位的父元素
+window.innerHeight		文档显示区高度

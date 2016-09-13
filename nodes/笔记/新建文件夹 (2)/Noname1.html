@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+	//1.函数记忆：
+	//让函数记住处理过的数据
+	//为什么：处理重复的数据时，不需要范湖执行复杂的运算
+	//如何使用：
+	//用闭包的机制将函数处理过的数据和他们对应的处理结果，保存起来
+	//普通的函数（没有记性）：
+	function isPrime1(n){//判断是否是质数
+		if(n<=3){return true;}
+		else if(n%2==0){return false;}
+		else{
+			for (var i=2;i<Math.sqrt(n);i++){
+				if (n%i==0){return false;}
+			}
+			return true;
+		}
+	}
+
+
+	var isPrime2=(function(){
+		var hash={};
+		return function(n){
+			if(n<=3){return true;}
+			else if(n%2==0){return false;}
+			else{
+				//如果hash[n]有效
+				if(hash[n]!==undefined){return hash[n];}
+					//返回hash[n]
+				else{
+				//否则才循环
+					for (var i=2;i<Math.sqrt(n);i++){
+						if (n%i==0){
+							hash[n]=false;
+							return false;
+						}
+					}
+				}
+				hash[n]=true;
+				return true;
+			}
+		}
+	})();
+
+	for(var i=0,arr=[];i<10000000;i++){
+		arr.push(parseInt(Math.random()*(999)+1001));
+	}
+	var before=new Date();
+	for(var i=0;i<arr.length;i++){
+		isPrime1(arr[i]);
+	}
+	var after= new Date();
+	console.log(after-before);
+  before=new Date();
+	for(var i=0;i<arr.length;i++){
+		isPrime2(arr[i]);
+	}
+	after= new Date();
+
+	console.log(after-before);
+	console.log(isPrime1(147));
+
+</script>
+<title>样式</title>
+</head>
+<body>
+
+</body>
+</html>

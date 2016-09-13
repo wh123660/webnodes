@@ -1,0 +1,74 @@
+循环三要素
+1.循环条件   允许进入循环的条件
+2.循环变量   用作比较的变量  向着不满足条件的趋势不断变换
+3.循环体：   反复执行的代码段
+比大小
+x>y&&
+y=[x,x=y][0];
+正则表达式：
+定义格式规则
+在定义到表达式中
+(\+86|0086)?\s*1[34578]\d{9}
+(?![...]+$)  不只有...组成
+^(?![a-zA-Z]+$)(?![0-9a-z]+$)[0-9a-zA-Z]{8}$
+开始结束之间不只有数字，不只有大写字母组成的八位.
+
+\u4e00
+\u9fa5
+
+1 11 13 14 21 22 23
+str.split(str);   转为数组
+正则
+<(a)[^>]*?target="[^"]*?"[^>]*?>[^>]*?</\1>
+身份证\d{15}(\d\d[0-9Xx])?
+/\b[A-z]+\b/  匹配单词
+\b([A-z])[A-z]+\1\b  匹配首尾字母一样的单词
+
+日期计算
+date.setXXX(date.getXXX()+/-n)
+date.toLocaleDateString()   转为操作系统当地时间格式，仅包含日期部分
+date.toLocaleTimeString()   转为操作系统当地时间格式，仅包含时间部分
+随机
+var r=parseInt(Math.random()*(max-min+1)+min)
+'use strict'   严格模式
+判断浏览器是否支持Ajax
+new XMLHttpRequest()
+
+匿名函数
+(function(){}())
+(function(){})()
+判断闭包
+1.局部变量2.内层函数 3.外层函数
+判断输出
+1.找到受到保护的局部变量，判断外层函数调用后她的值
+2.同义词外层函数调用返回的多个
+
+创建面向对象
+1.
+var obj={
+	'属性名‘：属性值；
+	...：...
+	’方法名‘：function（...）{...}，
+	...：...      不用加分号
+}
+面向对象的特点：  
+封装：将事物的属性和功能集中定义在一个对象中
+继承：父对象的成员，子对象不用反复创建，也可以直接使用
+多态：同一类失误或父子关系的失误，也可能表现出不同的状态
+Object.getPrototypeOf(subObj)
+获得subObj对象的父级原型对象
+obj.hasOwnProperty('属性名')    判断是不是自有属性
+obj.hasOwnProperty('属性名') &&（‘属性名’ in obj）
+
+
+1.判断父级对象isPrototypeOf()
+   Array.prototype.isPrototypeOf(obj)   返回true  /   false
+2.判断构造函数 obj.constructor==Array    是数组可能继承数组
+3.obj instanceof Array        
+3.判断没不属性class
+Object.prototype.toStrinig.call(obj)==[object Array];
+       
+innerHTML
+Text
+TextContent
+reg.test    测试...是否符合reg要求

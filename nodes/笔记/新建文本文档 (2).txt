@@ -1,0 +1,44 @@
+当点击a的时候切换右边的class 显示或隐藏
+select count(order_id) from jd_oders where..;
+select* from jd_oders where... limit start,count;
+每页大小为5，查询第一页
+。。。。limit 0,5;
+每页大小为5，查询第二页
+。。。。limit 5,5;
+每页大小为s，查询第n页
+。。。。limit (n-1)*s,s;
+ select * from jd_orders where user_name limit s,n;
+intval()		字符串转为数字
+javascript
+
+while(){}
+for(){}
+for(var key in s){}
+
+jQuery
+for(){}
+$("img").each(function(i){}
+$.each(data,function(i){})
+
+php
+for(){}
+
+异步请求头部和尾部
+$('.header').load('header.html');
+$('.footer').load('footer.html');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

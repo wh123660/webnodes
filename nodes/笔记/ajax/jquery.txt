@@ -1,0 +1,152 @@
+选择器
+$('选择器')	支持id，class，*，div，群组，兄弟，子代
+$('li:first')	支持:first,:last,:eq(0),:gt(3),:lt(3),:odd,:even
+$('p:contains("提交")') 	内容选择器
+    :empty		内容为空的
+    :parent		有父级的
+    :has(a)		有子集的
+$('[title]')	 	有某个属性的
+   [title^='图片']	属性名以图片开头的
+   [title$='相关']	属性名以相关结尾的
+   [title='达内']	属性名是达内的
+   [title*="达内"]	属性名中包含达内的
+$('div:hidden')		div是隐藏的
+$('div:visible')	div是visibel的
+表单元素选择器
+:input			匹配所有input
+:text			匹配所有文本域
+:password		所有password
+:raido			所有单选项
+:checkbox		所有多选
+:hidden			所有type=hidden
+:file			所有type=file
+:submit			所有type=submit
+:reset			所有type=reset
+:image			type=image	
+:button			type=button
+:disabled		被选中的
+:checked		被选中的
+:selected		被选中的
+:enabled		没被选中的
+子元素过滤
+:first-child		选中第一个子元素
+:last-child		选中最后一个子元素
+:nth-child（）		选中第n个子元素
+:only-child		选中只有一个子元素的元素
+属性
+$(...).attr('属性名')===e.getAttribute("")  属性读取
+$(...).attr("属性名"，‘属性值’)===e.setAttrbiute("","")	属性赋值
+元素内容
+$(...).html()==e.innerHTML			读取内容（包括元素符号）
+$(...).html("HTML片段")==e.innerHTML='片段'	e的内容指定为“片段”
+$(...).text()==e.innerText			读取文本内容
+$(...).text('文本')==e.innerText="文本"		e的文本内容制定为：文本
+$(...).empty()==e.innerHTML=''			设置内容为空
+表单
+$(..).val()==input.value			读取表单元素的值
+$(..).val("值")==input.value="值"		给表单元素赋值
+节点样式
+$(..).css('样式名'，“值”)==e.style.xxxXxx=值	设置某元素的内联样式
+$(..).css('样式名'）==window.getComputedStyle() 读取元素最终样式
+$(..).css({样式名：值，样式名：值，...})		设置元素多个样式
+操作元素样式之——修改class属性值
+$(..).addClass(‘class名’)		给元素增加class
+$(..).removeClass('class名')		移除元素class
+$(..).hasClass('class名')		判断元素是否有class
+$(..).toggleClass('class名')		切换class，有则删，无则加
+添加新节点
+DOM
+var span=document.createElement('span')		创建新的span
+span.innerHTML='用户名已存在'			修改span内容
+span.setAttribute(“title”，“错误提示”)	修改title属性
+div.appendChild(span)		div下追加span
+var $span=$('<span>ok</span>')	创建元素
+$('div').appendChild($span)	将span元素追加到div中
+相关函数
+p.append(x)	p内追加子元素x	追加到内容结尾
+p.prepend(x)	p的开头追加元素x	追加到内容结尾
+x.appendTo(p)	将x追加到p里	追加到内容开头
+x.prependTo(p)	将x追加到p开头	追加到内容开头
+before()			在每个匹配元素之前插入内容
+after()				在每个匹配元素之后插入内容
+insertBefore()		把匹配的元素插入到另一个指定集合的后面
+insertAfter()		把匹配到的元素插入到制定集合的前面
+wrap()			把匹配的元素用制定的内容或元素包裹起来
+unwrap()		移除并替换制定元素的父元素
+$(...).remove()		把某元素删除
+$('已有元素').replaceWith('新元素')	替换已有节点
+$('新元素').replaceAll('已有元素')	替换匹配到的所有元素
+$(...).clone		复制当前元素
+$(...).clone(true)	赋值当前元素+事件监听函数
+$('parent').delegate(‘子元素选择器’，‘事件类型’，fn)	事件代理
+$('parent').undelegate(‘子元素选择器’，‘事件类型’)	取消该事件代理
+$('target').on('事件类型',fn)			事件绑定
+等于$(target).bind('',fn)
+$('target').on(‘子元素选择器’，'事件类型',fn)	事件绑定
+等于$(parent).delegate('','',fn)
+window.onload()				页面加载完成后
+window.ondocumentloaded(DOMContentLoaded)
+面试题
+$(document).ready(fn)与window.load=fn的区别
+
+show()			使用定时器实现的让某个元素动画显示
+hide()			使用定时器实现的让某个元素动画隐藏
+slideUp()		高度动画，向上消失
+slideDown()		高度动画，向下消失
+slideToggle()		高度动画，显示就消失，消失就显示
+fadeIn()		透明度动画，显示
+fadeOut()		透明度动画，隐藏
+fadeToggle()		透明度动画，显示就隐藏，消失就显示
+$(..).animate( {}, duration, fn )	万能动画函数，动画改编某个属性
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
