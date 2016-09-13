@@ -1,0 +1,156 @@
+map
+	是一组键值对的结构，具有极快的查找速度。
+	用法：
+	var m = new Map();		初始化信的map
+	var m = new Map([['michael',94],['bob',93],['tea',39]]);	
+	m.set('adam',49);		设置键值
+	m.has('adam');			查看是否有此键
+	m.delete('adam');		删除键
+	m.get('adam');			获取键的值
+	m.keys();			显示所有键
+	m.values();			显示所有值
+	m.size()			显示值的数量
+	m.valueOf()			显示所有键值
+	m.clear()			清空该map
+	m.forEach(function (value, key, map) {})
+	m.toString()			返回值：[object Map]
+
+set
+	Set和Map类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在Set中，没有重复的key。
+
+	要创建一个Set，需要提供一个Array作为输入，或者直接创建一个空Set：
+	var s1 = new Set();
+	var s2 = new Set([1,2,3]);
+	var s = new Set([1,2,3,3,'3']);   =>Set{1,2,3,'3'}
+	s.add(必须有值)			如果没有，传undifined，如果有undefined则不传
+	s.size				显示值的数量
+	s.clear()			清空该set
+	s.has('adam');			查看是否有此值
+	s.delete('adam');		删除该值
+	s.forEach(function(v){		s值有值，v：值
+	console.log(v)
+	})
+	s.toString()			返回值：[object Set]
+
+	var a = ['A', 'B', 'C'];
+	
+a.forEach(function (element, index, array) {
+
+	    // element: 指向当前元素的值
+	
+    // index: 指向当前索引
+	
+    // array: 指向Array对象本身
+	
+    console.log(array);
+	
+});
+	Set与Array类似，但Set没有索引，因此回调函数的前两个参数都是元素本身
+
+for循环
+	当我们手动给Array对象添加了额外的属性后，for ... in循环将带来意想不到的意外效果
+	for ... in循环将把name包括在内，但Array的length属性却不包括在内。
+
+	for ... of循环则完全修复了这些问题，它只循环集合本身的元素：
+
+    iterable
+	遍历Array可以采用下标循环，遍历Map和Set就无法使用下标。为了统一集合类型，ES6标准引入了新的iterable类型，Array、Map和Set都属于iterable类型。
+	具有iterable类型的集合可以通过新的for ... of循环来遍历。
+	for ... of循环是ES6引入的新的语法:
+		'use strict';
+		var a = [1, 2, 3];
+		for (var x of a) {
+		}
+		alert('你的浏览器支持for ... of');
+
+	你可能会有疑问，for ... of循环和for ... in循环有何区别？
+	for ... in循环由于历史遗留问题，它遍历的实际上是对象的属性名称。一个Array数组实际上也是一个对象，它的每个元素的索引被视为一个属性。
+	当我们手动给Array对象添加了额外的属性后，for ... in循环将带来意想不到的意外效果：
+	for ... in循环将把name包括在内，但Array的length属性却不包括在内。
+	for ... of循环则完全修复了这些问题，它只循环集合本身的元素：
+	这就是为什么要引入新的for ... of循环。
+	然而，更好的方式是直接使用iterable内置的forEach方法，它接收一个函数，每次迭代就自动回调该函数。。
+	Map和Set是ES6标准新增的数据类型，请根据浏览器的支持情况决定是否要使用。
+
+用for ... of循环遍历集合，用法如下：
+
+	var a = ['A', 'B', 'C'];
+	var s = new Set(['A', 'B', 'C']);
+	var m = new Map([[1, 'x'], [2, 'y'], [3, 'z']]);
+	for (var x of a) { // 遍历Array
+	    alert(x);
+	}
+	for (var x of s) { // 遍历Set
+	    alert(x);
+	}
+	for (var x of m) { // 遍历Map
+	    alert(x[0] + '=' + x[1]);
+	}
+
+	var a = ['A', 'B', 'C'];
+	a.name = 'Hello';
+	for (var x in a) {
+	    alert(x); // '0', '1', '2', 'name'
+	}
+
+	var a = ['A', 'B', 'C'];
+	a.name = 'Hello';
+	for (var x of a) {
+	    alert(x); 'A', 'B', 'C'
+	}
+
+高阶函数
+	function add(x, y, f) {
+	    return f(x) + f(y);
+	}
+	add(-5,6,Math.abs)  =>  11	
+
+.map()函数
+	function pow(x) {
+	    return x * x;
+	}
+	var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+	arr.map(pow);
+
+reduce
+	语法：
+	array1.reduce(callbackfn[, initialValue])
+	function callbackfn(previousValue, currentValue, currentIndex, array1)
+		previousValue 参数为 initialValue。
+		currentValue 参数是数组中的第一个元素的值。
+		previousValue 参数是数组中的第一个元素的值。
+		currentValue 参数是数组中的第二个元素的值。
+	initialValue
+		可选。如果指定 initialValue，则它将用作初始值来启动累积。第一次调用 callbackfn 函数会将此值作为参数而非数组值提供
+	array1:数组
+	callbackfn:
+		最多接受四个参数的函数，对于数组中的每个元素都会调用callbackfn函数一次
+
+reduce
+	再看reduce的用法。Array的reduce()把一个函数作用在这个Array的[x1, x2, x3...]上，这个函数必须接收两个参数，reduce()把结果继续和序列的下一个元素做累积计算，其效果就是：
+	公式：
+	[x1, x2, x3, x4].reduce(f) = f(f(f(x1, x2), x3), x4)
+
+	var arr = [1, 3, 5, 7, 9];
+	arr.reduce(function (x, y) {
+	    return x + y;
+	});
+
+filter
+	filter也是一个常用的操作，它用于把Array的某些元素过滤掉，然后返回剩下的元素。
+	如果值里面有：null,'',undefind,false,NaN,!true 都会过滤掉
+
+	和map()类似，Array的filter()也接收一个函数。和map()不同的是，filter()把传入的函数依次作用于每个元素，然后根据返回值是true还是false决定保留还是丢弃该元素。
+	var arr = [1, 2, 4, 5, 6, 9, 10, 15];
+	var r = arr.filter(function (x) {
+	    return x;
+	});
+	r;
+
+	把一个Array中的空字符串删掉，可以这么写：
+	数组中不能有true，否则会报错
+	var arr = ['A', '', 'B', null, undefined, 'C', '  '，NaN];
+	var r = arr.filter(function (s) {
+	    return s && s.trim(); // 注意：IE9以下的版本没有trim()方法
+	});
+	r; 

@@ -1,0 +1,9 @@
+fn.call(obj,param)
+将fn中的this指向了obj的this,obj拥有了fn中的属性及方法； 
+call与apply的区别在于param的形式，apply必须为arguments，即类数组。
+ fn.caller
+ 返回正在调用fn的函数；
+ arguments.callee 
+返回当前正在执行的函数；常用于匿名函数递归；
+ arguments.length实参数 
+arguments.callee.length形参数；

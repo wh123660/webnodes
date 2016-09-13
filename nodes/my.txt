@@ -1,0 +1,141 @@
+弹出确认框
+if(confirm("确认支付？")==false){return false;}
+
+跳转页面
+window.location.href = "www.baidu.com"
+刷新当前页面,true:绕过缓存重新加载
+window.location.reload(true);
+
+排序
+sort()		以首字符排序
+function sortnum1(a,b){return a-b}	定义升序函数
+function sortnum2(a,b){return -（a-b）}	定义降序函数
+arr.sort(sortnum1)	arr以升序排列
+arr.sort(sortnum2)	arr以降序排列
+
+定时器开启的时候先清除定时器可以解决每次触发启动多个定时器
+
+filter:alpha(opacity:30);	IE透明度30%
+opacity:0.3			chrom透明度0.3
+
+元素的宽高上左父级值获取：	div.offsetHeight/...
+
+for循环中定义的定时器命名可以用元素的下标来命名：
+li[i].timer=setInterval()......
+带到函数里面也就是：
+obj.timer = setInterval()......
+所有的参数都不能共有，否则会有冲突：
+alpha=30;
+放到函数里面：
+obj.alpha=30;
+有小数的时候注意四舍五入，否则计算机计算的时候有误差
+
+函数结束后执行函数，写成参数：
+function(fn){
+  if(fn){
+    fn();
+  }
+}
+
+function函数参数可以是json类型的，用for in循环
+
+$.inArray('a',[],2)	在数组中找第二个a的索引
+$.inArray('a',[])	在数组中找第一个a的索引
+
+
+
+Validator对象——插件
+new Date		返回的是有格式的时间
++new Date		返回的是一个很长的毫秒数
+
+rangelength:[2,10]	指长度范围是2~10
+range			值的范围
+
+Validator.form()	验证表单是否有效，返回true/false
+Validator.element(element)	验证元素是否有效,返回true/false
+Validator.reseForm()	把表单回复到验证前原来的状态
+Validator.showErrors(errows)	针对某个元素显示特定的错误信息
+Validator.numberOfInvalids()	返回无效的元素数量
+静态方法
+jQuery.validator.addMethod(name,method[,message])	增加自定义的验证方法
+jQuery.validator.format(template,argument,argumentN...)	格式化字符串，用参数代替模板中的{n}
+jQuery.validator.setDefaults(options)	修改插件默认设置
+jQuery.validator.addClassRules(name,rules)	为某些包含名为name的class增加组合验证类型
+validate()方法配置项
+submitHandler	通过验证后运行的函数，可以加上表单提交方法——如果不通过，不执行
+invalidHandler	无效表单提交后运行的函数——如果通过，不执行
+ignore		对某些元素不进行验证——选择器
+rules		定义校验规则
+messages	定义提示信息
+groups		对一组元素的验证，用一个错误提示，用errorPlacement控制把出错信息放在哪里
+$('form').submit()	提交表单
+depends			验证是否填写了
+showErrors		可以显示总共有多少个未通过验证的元素
+errorPlacement		自定义错误信息放到哪里
+success			要验证的元素通过验证后的动作
+验证通过后增加一个right	class——对lable元素
+highlight		可以给未通过验证的元素加效果——针对input元素
+unhighlight		去除未通过验证的元素的效果，一般和highlight同时使用
+
+jQuery.validate的optional(element)，用于表单控件的值不为空时才触发验证。
+
+
+AJAX XMLHttpRequest取得相应
+responseText			获取字符串形式的相应数据
+responseXML			获取XML形式的相应数据
+status/statusText		艺术字和文本形式返回HTTP状态码
+getAllResponseHeader()		获取所有相应报头
+getResponseHeader()		查询相应中的某个字段的值
+readyState属性：			
+0：请求未初始化，open还没有调用
+1：服务器连接已建立，open已经调用了
+2：请求已接受，也就是接收到头信息了
+3：请求处理中，也就是接受到相应主题了
+4：请求已完成，而且相应已就绪，也就是相应完成了
+
+SVG坐标系
+用户坐标系（User Coordinate）世界坐标系
+自身坐标系（Current Coordinate）每个图形元素或分组独立与生俱来
+前驱坐标系（Previous Coordinate）父容器的坐标系
+参考坐标系（Reference Coordinate） 使用其他坐标系来考究自身的情况时使用
+
+滚动条
+$(document).ready(fn)		页面加载完之后
+$(window).scroll(fn)		页面滚动事件
+$(documeng).scrollTop()		页面滚动 距离
+
+ie6中如何固定定位
+* html #menu{
+	/*position:fixed*/
+	position:absolute;
+	top:expression(((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+'px');
+}
+
+hasOwnProperty：是用来判断一个对象是否有你给出名称的属性或对象。不过需要注意的是，此方法无法检查该对象的原型链中是否具有该属性，该属性必须是对象本身的一个成员。
+isPrototypeOf：是用来判断要检查其原型链的对象是否存在于指定对象实例中，是则返回true，否则返回false。
+
+toUpperCase()和toLowerCase()	转换成大写或小写字母
+写法：str.toUpperCase()
+
+form表单提交的时候要加enctype="multipart/form-data"
+required 为表单内必填的项
+
+label中for属性指向的是绑定元素的id
+
+弹出框如果样式一样的话可以只修改里面的内容的
+
+禁止手机页面放大
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+
+
+
+nodejs里面的继承
+inherits
+
+
+var scroll-top = document.documentElement.scrollTop||document.body.scrollTop;		为了解决兼容问题
+window.onscroll				滚动中
+document.documentElement.clientHeight	页面可视区域高度
+
+
+
