@@ -1,0 +1,8 @@
+utf8和utf-8的区别
+    相信很多程序员刚开始也会有这样的疑惑，如题，我也是。
+    其实，他们可以这样来区分。
+    一、在php和html中设置编码，请尽量统一写成“UTF-8”,这才是标准写法，而utf-8只是在window中不区分大小写的写法而已，其次，大部分情况简写成“UTF8”或“utf8”程序也可以识别，但在ie浏览器就不识别它了，所以，最好，严格写成“UTF-8”，比如：
+    <?php header('Content-Type: text/html; charset=UTF-8'); ?>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     二、在数据库设置编码的时候，必须写成“utf8”，因为MySQL的命令模式中只能识别“utf8”，不能识别“utf-8”，比如：PHP程序中可以写：
+    <?php mysql_set_charset('utf8',$link); ?>
